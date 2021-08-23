@@ -1,14 +1,17 @@
 <template>
-  <h1>{{ jobs[0].location }}</h1>
+  <Joblist :jobs="jobs" />
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref, toRefs } from "vue";
+import Joblist from "./components/Job.vue";
 import Job from "./types/Jobs";
 
 export default defineComponent({
   name: "App",
-  components: {},
+  components: {
+    Joblist,
+  },
   setup() {
     const state = reactive({
       name: "Idris",
